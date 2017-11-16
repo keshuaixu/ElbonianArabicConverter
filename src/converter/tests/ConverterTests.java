@@ -66,7 +66,7 @@ public class ConverterTests {
 
     @Test(expected = ValueOutOfBoundsException.class)
     public void valueOutOfBoundsTest() throws MalformedNumberException, ValueOutOfBoundsException {
-        (new ElbonianArabicConverter("0")).toArabic();
+        (new ElbonianArabicConverter("0")).toElbonian();
     }
 
 }

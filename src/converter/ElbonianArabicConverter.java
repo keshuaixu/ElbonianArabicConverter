@@ -3,6 +3,9 @@ package converter;
 import converter.exceptions.MalformedNumberException;
 import converter.exceptions.ValueOutOfBoundsException;
 
+import java.util.HashMap;
+import java.util.stream.Collectors;
+
 /**
  * This class implements a converter that takes a string that represents a number in either the
  * Elbonian or Arabic numeral form. This class has methods that will return a value in the chosen form.
@@ -13,6 +16,8 @@ public class ElbonianArabicConverter {
 
     // A string that holds the number (Elbonian or Arabic) you would like to convert
     private final String number;
+
+    private HashMap<Character,Integer> char2int = new HashMap<>();
 
 
     /**
@@ -32,6 +37,17 @@ public class ElbonianArabicConverter {
 
         // TODO check to see if the number is valid, then set it equal to the string
         this.number = number;
+
+        this.char2int.put('M', 1000);
+        this.char2int.put('C', 100);
+        this.char2int.put('X', 10);
+        this.char2int.put('I', 1);
+        this.char2int.put('D', 500);
+        this.char2int.put('L', 50);
+        this.char2int.put('V', 5);
+        this.char2int.put('e', 400);
+        this.char2int.put('m', 40);
+        this.char2int.put('w', 4);
     }
 
     /**
@@ -40,9 +56,16 @@ public class ElbonianArabicConverter {
      *
      * @return An arabic value
      */
-    public int toArabic() {
-        // TODO Fill in the method's body
-        return 1;
+    public int toArabic() throws MalformedNumberException {
+        try {
+            // TODO: rule checker
+            return this.number.chars()
+                    .mapToObj(c -> (char) c)
+                    .map(char2int::get)
+                    .mapToInt(Integer::intValue).sum();
+        } catch (NullPointerException e) {
+            throw new MalformedNumberException(number);
+        }
     }
 
     /**
