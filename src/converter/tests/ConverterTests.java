@@ -53,7 +53,11 @@ public class ConverterTests {
         ElbonianArabicConverter converter = new ElbonianArabicConverter("MDeCLmXVwI");
         assertEquals(converter.toArabic(), 2110);
     }
-
+    @Test
+    public void ArabicToElbonianAllLetters2() throws MalformedNumberException, ValueOutOfBoundsException {
+        ElbonianArabicConverter converter = new ElbonianArabicConverter("MMCX");
+        assertEquals(converter.toArabic(), 2110);
+    }
     @Test(expected = MalformedNumberException.class)
     public void malformedNumberTest() throws MalformedNumberException, ValueOutOfBoundsException {
         (new ElbonianArabicConverter("ABC")).toArabic();
