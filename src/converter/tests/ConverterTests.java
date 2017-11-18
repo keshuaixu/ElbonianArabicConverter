@@ -80,5 +80,8 @@ public class ConverterTests {
         (new ElbonianArabicConverter("0")).toElbonian();
     }
 
-
+    @Test(expected = ValueOutOfBoundsException.class)
+    public void valueOutOfBoundsTest2() throws MalformedNumberException, ValueOutOfBoundsException {
+        (new ElbonianArabicConverter("-1")).toElbonian();
+    }
 }
