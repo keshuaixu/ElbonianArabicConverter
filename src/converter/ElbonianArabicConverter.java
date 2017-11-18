@@ -2,11 +2,8 @@ package converter;
 
 import converter.exceptions.MalformedNumberException;
 import converter.exceptions.ValueOutOfBoundsException;
-import jdk.nashorn.internal.runtime.regexp.joni.exception.ValueException;
 
-import javax.swing.*;
 import java.util.HashMap;
-import java.util.stream.Collectors;
 
 /**
  * This class implements a converter that takes a string that represents a number in either the
@@ -21,8 +18,10 @@ public class ElbonianArabicConverter {
     private final String number;
 
     private HashMap<Character, Integer> char2int = new HashMap<>();
-    private String theWholeThing = "MMMDeCCCLmXXXVwIII";
-    private int numberInt;
+    private static final String theWholeThing = "MMMDeCCCLmXXXVwIII";
+
+    private int arabic;
+    private String elbonian;
 
 
     /**
@@ -40,9 +39,6 @@ public class ElbonianArabicConverter {
      */
     public ElbonianArabicConverter(String number) throws MalformedNumberException, ValueOutOfBoundsException {
 
-        // TODO check to see if the number is valid, then set it equal to the string
-        this.number = number;
-
         this.char2int.put('M', 1000);
         this.char2int.put('C', 100);
         this.char2int.put('X', 10);
@@ -53,6 +49,18 @@ public class ElbonianArabicConverter {
         this.char2int.put('e', 400);
         this.char2int.put('m', 40);
         this.char2int.put('w', 4);
+
+        this.number = number;
+        String input = number.trim();
+
+        try {
+            arabic = Integer.parseInt(input);
+            this.elbonian = this.toElbonianRecursive("", theWholeThing, 0);
+        } catch (NumberFormatException e) {
+            this.elbonian = input;
+            this.arabic = this.toArabicErrorable();
+        }
+
     }
 
     /**
@@ -62,8 +70,11 @@ public class ElbonianArabicConverter {
      * @return An arabic value
      */
     public int toArabic() throws MalformedNumberException {
+        return this.arabic;
+    }
+
+    private int toArabicErrorable() throws MalformedNumberException {
         try {
-            // TODO: rule checker
             int tentativeArabic = this.number.chars()
                     .mapToObj(c -> (char) c)
                     .map(char2int::get)
@@ -82,26 +93,23 @@ public class ElbonianArabicConverter {
      *
      * @return An Elbonian value
      */
-    public String toElbonian() throws ValueOutOfBoundsException {
-        this.numberInt = Integer.parseInt(this.number);
-        // TODO Fill in the method's body
-        return toElbonianRecursion("", this.theWholeThing, 0);
+    public String toElbonian() {
+        return this.elbonian;
     }
 
-    private String toElbonianRecursion(String confirmedElbonian, String possibleElbonian, int confirmedArabic) throws ValueOutOfBoundsException {
+    private String toElbonianRecursive(String confirmedElbonian, String possibleElbonian, int confirmedArabic) throws ValueOutOfBoundsException {
 
         char currentElbonian = possibleElbonian.charAt(0);//todo check string size and make sure it is not zero
         int currentArabic = this.char2int.get(currentElbonian);
         int tentativeArabic = currentArabic + confirmedArabic;
         String tentativeElbonian = confirmedElbonian + String.valueOf(currentElbonian);
         try {
-            if (tentativeArabic == this.numberInt) {
+            if (tentativeArabic == this.arabic) {
                 return tentativeElbonian;
-            } else if (tentativeArabic < this.numberInt) {
-                return this.toElbonianRecursion(tentativeElbonian, possibleElbonian.substring(1), tentativeArabic);
-                //todo check size of possibleElbonian
+            } else if (tentativeArabic < this.arabic) {
+                return this.toElbonianRecursive(tentativeElbonian, possibleElbonian.substring(1), tentativeArabic);
             } else {
-                return this.toElbonianRecursion(confirmedElbonian, possibleElbonian.substring(1), confirmedArabic);
+                return this.toElbonianRecursive(confirmedElbonian, possibleElbonian.substring(1), confirmedArabic);
             }
         } catch (StringIndexOutOfBoundsException e) {
             throw new ValueOutOfBoundsException(this.number);
