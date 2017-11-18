@@ -4,6 +4,8 @@ import converter.exceptions.MalformedNumberException;
 import converter.exceptions.ValueOutOfBoundsException;
 
 import java.util.HashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * This class implements a converter that takes a string that represents a number in either the
@@ -19,6 +21,7 @@ public class ElbonianArabicConverter {
 
     private HashMap<Character, Integer> char2int = new HashMap<>();
     private static final String theWholeThing = "MMMDeCCCLmXXXVwIII";
+    private static final Pattern elbonianRegex = Pattern.compile("^M{0,3}D?e?C{0,3}L?m?X{0,3}V?w?I{0,3}$");
 
     private int arabic;
     private String elbonian;
@@ -30,6 +33,12 @@ public class ElbonianArabicConverter {
      * spaces within the actual number (ie. "9 9" is not ok, but " 99 " is ok). If the String is an Arabic
      * number it should be checked to make sure it is within the Elbonian number systems bounds. If the
      * number is Elbonian, it must be a valid Elbonian representation of a number.
+     * <p>
+     * Unspecified behaviors:
+     * 0. A string that is not valid Elbonian nor valid arabic will throw MalformedNumberException
+     * 1. An empty string will be assumed Elbonian and converts to Arabic 0.
+     * 2. Elbonian number does not have to exhaust the larger number before using the smaller number, as long as they are in order (rule 3).
+     * e.g. MDeCLmXVwI and MMCX are both valid, mapping to arabic 2110.
      *
      * @param number A string that represents either a Elbonian or Arabic number.
      * @throws MalformedNumberException  Thrown if the value is an Elbonian number that does not conform
@@ -52,14 +61,19 @@ public class ElbonianArabicConverter {
 
         this.number = number;
         String input = number.trim();
-
-        try {
-            arabic = Integer.parseInt(input);
-            this.elbonian = this.toElbonianRecursive("", theWholeThing, 0);
-        } catch (NumberFormatException e) {
+        Matcher elbonianMatcher = elbonianRegex.matcher(input);
+        if (elbonianMatcher.matches()) {
             this.elbonian = input;
             this.arabic = this.toArabicErrorable();
+        } else {
+            try {
+                arabic = Integer.parseInt(input);
+                this.elbonian = this.toElbonianRecursive("", theWholeThing, 0);
+            } catch (NumberFormatException e) {
+                throw new MalformedNumberException(input);
+            }
         }
+
 
     }
 
@@ -75,15 +89,11 @@ public class ElbonianArabicConverter {
 
     private int toArabicErrorable() throws MalformedNumberException {
         try {
-            int tentativeArabic = this.number.chars()
+            return this.number.chars()
                     .mapToObj(c -> (char) c)
                     .map(char2int::get)
                     .mapToInt(Integer::intValue).sum();
-            String convertedBackElbonian = (new ElbonianArabicConverter(String.valueOf(tentativeArabic))).toElbonian();
-            if (convertedBackElbonian.equals(this.number)) {
-                return tentativeArabic;
-            } else throw new MalformedNumberException(convertedBackElbonian);
-        } catch (NullPointerException | ValueOutOfBoundsException e) {
+        } catch (NullPointerException e) {
             throw new MalformedNumberException(number);
         }
     }

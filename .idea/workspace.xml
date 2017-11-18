@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbc58e82-54a4-4d51-919e-fe88e5b34422" name="Default" comment="Finish converter function. Need to check ArabicToElbonian test">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/converter/ElbonianArabicConverter.java" afterPath="$PROJECT_DIR$/src/converter/ElbonianArabicConverter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/converter/tests/ConverterTests.java" afterPath="$PROJECT_DIR$/src/converter/tests/ConverterTests.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -25,12 +25,12 @@
       <file leaf-file-name="ElbonianArabicConverter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/converter/ElbonianArabicConverter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="55" column="12" lean-forward="false" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
+            <state relative-caret-position="193">
+              <caret line="38" column="75" lean-forward="false" selection-start-line="38" selection-start-column="75" selection-end-line="38" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3823#3824#0" expanded="true" />
-                <element signature="e#3859#3860#0" expanded="true" />
+                <element signature="e#4286#4287#0" expanded="true" />
+                <element signature="e#4322#4323#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -39,8 +39,8 @@
       <file leaf-file-name="ConverterTests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/converter/tests/ConverterTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-57">
-              <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+            <state relative-caret-position="247">
+              <caret line="65" column="43" lean-forward="false" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -101,8 +101,8 @@
         <option value="$PROJECT_DIR$/src/ElbonianArabicConverter.java" />
         <option value="$PROJECT_DIR$/src/converter/exceptions/MalformedNumberException.java" />
         <option value="$PROJECT_DIR$/src/converter/exceptions/ValueOutOfBoundsException.java" />
-        <option value="$PROJECT_DIR$/src/converter/tests/ConverterTests.java" />
         <option value="$PROJECT_DIR$/src/converter/ElbonianArabicConverter.java" />
+        <option value="$PROJECT_DIR$/src/converter/tests/ConverterTests.java" />
       </list>
     </option>
   </component>
@@ -664,43 +664,42 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ConverterTests - 2017.11.15 at 22h 12m 26s.xml">
-      <configuration name="ConverterTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConverterTests - 2017.11.15 at 22h 13m 17s.xml">
-      <configuration name="ConverterTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConverterTests - 2017.11.15 at 22h 13m 51s.xml">
-      <configuration name="ConverterTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConverterTests - 2017.11.15 at 22h 16m 10s.xml">
-      <configuration name="ConverterTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConverterTests - 2017.11.16 at 20h 10m 59s.xml">
-      <configuration name="ConverterTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConverterTests - 2017.11.16 at 21h 35m 13s.xml">
-      <configuration name="ConverterTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConverterTests - 2017.11.16 at 21h 40m 46s.xml">
-      <configuration name="ConverterTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConverterTests - 2017.11.16 at 21h 46m 23s.xml">
-      <configuration name="ConverterTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConverterTests - 2017.11.16 at 21h 48m 29s.xml">
-      <configuration name="ConverterTests" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ConverterTests - 2017.11.16 at 21h 49m 16s.xml">
+      <configuration name="ConverterTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConverterTests - 2017.11.18 at 14h 45m 10s.xml">
+      <configuration name="ConverterTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConverterTests - 2017.11.18 at 14h 58m 17s.xml">
+      <configuration name="ConverterTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConverterTests - 2017.11.18 at 15h 07m 01s.xml">
+      <configuration name="ConverterTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConverterTests - 2017.11.18 at 15h 07m 34s.xml">
+      <configuration name="ConverterTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConverterTests - 2017.11.18 at 15h 08m 10s.xml">
+      <configuration name="ConverterTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConverterTests - 2017.11.18 at 15h 08m 55s.xml">
+      <configuration name="ConverterTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConverterTests - 2017.11.18 at 15h 11m 31s.xml">
+      <configuration name="ConverterTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConverterTests - 2017.11.18 at 15h 11m 37s.xml">
+      <configuration name="ConverterTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConverterTests - 2017.11.18 at 15h 11m 39s.xml">
       <configuration name="ConverterTests" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14064000" />
+    <option name="totallyTimeSpent" value="15661000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="749" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -713,7 +712,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280507" sideWeight="0.49676898" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25265554" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -723,7 +722,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39936608" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -774,7 +773,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="Finish converter function. Need to check ArabicToElbonian test" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -814,8 +815,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3823#3824#0" expanded="true" />
-            <element signature="e#3859#3860#0" expanded="true" />
+            <element signature="e#4286#4287#0" expanded="true" />
+            <element signature="e#4322#4323#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -852,8 +853,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3823#3824#0" expanded="true" />
-            <element signature="e#3859#3860#0" expanded="true" />
+            <element signature="e#4286#4287#0" expanded="true" />
+            <element signature="e#4322#4323#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -890,8 +891,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3823#3824#0" expanded="true" />
-            <element signature="e#3859#3860#0" expanded="true" />
+            <element signature="e#4286#4287#0" expanded="true" />
+            <element signature="e#4322#4323#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -952,8 +953,8 @@
           <caret line="55" column="6" lean-forward="true" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3823#3824#0" expanded="true" />
-            <element signature="e#3859#3860#0" expanded="true" />
+            <element signature="e#4286#4287#0" expanded="true" />
+            <element signature="e#4322#4323#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -974,8 +975,8 @@
           <caret line="55" column="6" lean-forward="true" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3823#3824#0" expanded="true" />
-            <element signature="e#3859#3860#0" expanded="true" />
+            <element signature="e#4286#4287#0" expanded="true" />
+            <element signature="e#4322#4323#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1012,8 +1013,8 @@
           <caret line="42" column="27" lean-forward="false" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3823#3824#0" expanded="true" />
-            <element signature="e#3859#3860#0" expanded="true" />
+            <element signature="e#4286#4287#0" expanded="true" />
+            <element signature="e#4322#4323#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1050,8 +1051,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3823#3824#0" expanded="true" />
-            <element signature="e#3859#3860#0" expanded="true" />
+            <element signature="e#4286#4287#0" expanded="true" />
+            <element signature="e#4322#4323#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1088,8 +1089,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3823#3824#0" expanded="true" />
-            <element signature="e#3859#3860#0" expanded="true" />
+            <element signature="e#4286#4287#0" expanded="true" />
+            <element signature="e#4322#4323#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1126,8 +1127,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3823#3824#0" expanded="true" />
-            <element signature="e#3859#3860#0" expanded="true" />
+            <element signature="e#4286#4287#0" expanded="true" />
+            <element signature="e#4322#4323#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1164,8 +1165,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3823#3824#0" expanded="true" />
-            <element signature="e#3859#3860#0" expanded="true" />
+            <element signature="e#4286#4287#0" expanded="true" />
+            <element signature="e#4322#4323#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1212,6 +1213,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/converter/ElbonianArabicConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="38" column="75" lean-forward="false" selection-start-line="38" selection-start-column="75" selection-end-line="38" selection-end-column="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4286#4287#0" expanded="true" />
+            <element signature="e#4322#4323#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/converter/exceptions/MalformedNumberException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
@@ -1220,22 +1233,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/converter/ElbonianArabicConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="55" column="12" lean-forward="false" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3823#3824#0" expanded="true" />
-            <element signature="e#3859#3860#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/converter/tests/ConverterTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-57">
-          <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+        <state relative-caret-position="247">
+          <caret line="65" column="43" lean-forward="false" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
